@@ -17,3 +17,9 @@ document.getElementById('btnTrungBinh').onclick = function () {
 
   document.getElementById('trungBinh').innerHTML = tong / 5;
 };
+
+document.getElementById('btnQuyDoi').onclick = function () {
+  let tienUsd = document.getElementById('usd').value;
+  tienViet = new Intl.NumberFormat('vn-VN').format(23500 * tienUsd);
+  document.getElementById('quyDoi').innerHTML = tienViet;
+};
