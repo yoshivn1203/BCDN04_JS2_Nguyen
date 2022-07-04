@@ -9,11 +9,11 @@ document.getElementById('btnTinhLuong').onclick = function () {
 };
 document.getElementById('btnTrungBinh').onclick = function () {
   let tong =
-    parseInt(document.getElementById('soThuNhat').value) +
-    parseInt(document.getElementById('soThuHai').value) +
-    parseInt(document.getElementById('soThuBa').value) +
-    parseInt(document.getElementById('soThuTu').value) +
-    parseInt(document.getElementById('soThuNam').value);
+    Number(document.getElementById('soThuNhat').value) +
+    Number(document.getElementById('soThuHai').value) +
+    Number(document.getElementById('soThuBa').value) +
+    Number(document.getElementById('soThuTu').value) +
+    Number(document.getElementById('soThuNam').value);
 
   document.getElementById('trungBinh').innerHTML = tong / 5;
 };
@@ -22,4 +22,16 @@ document.getElementById('btnQuyDoi').onclick = function () {
   let tienUsd = document.getElementById('usd').value;
   tienViet = new Intl.NumberFormat('vn-VN').format(23500 * tienUsd);
   document.getElementById('quyDoi').innerHTML = tienViet;
+};
+
+document.getElementById('btnTinh').onclick = function () {
+  var chieuRong = document.getElementById('chieuRong').value;
+  chieuCao = document.getElementById('chieuCao').value;
+
+  dienTich = chieuRong * chieuCao;
+  chuVi = 2 * (Number(chieuRong) + Number(chieuCao));
+
+  document.getElementById(
+    'tinh'
+  ).innerHTML = `Diện tích: ${dienTich}; Chu vi: ${chuVi}`;
 };
