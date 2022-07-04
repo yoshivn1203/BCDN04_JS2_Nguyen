@@ -7,6 +7,7 @@ document.getElementById('btnTinhLuong').onclick = function () {
     'vn-VN'
   ).format(tienLuong);
 };
+
 document.getElementById('btnTrungBinh').onclick = function () {
   let tong =
     Number(document.getElementById('soThuNhat').value) +
@@ -25,7 +26,7 @@ document.getElementById('btnQuyDoi').onclick = function () {
 };
 
 document.getElementById('btnTinh').onclick = function () {
-  var chieuRong = document.getElementById('chieuRong').value;
+  let chieuRong = document.getElementById('chieuRong').value;
   chieuCao = document.getElementById('chieuCao').value;
 
   dienTich = chieuRong * chieuCao;
@@ -34,4 +35,11 @@ document.getElementById('btnTinh').onclick = function () {
   document.getElementById(
     'tinh'
   ).innerHTML = `Diện tích: ${dienTich}; Chu vi: ${chuVi}`;
+};
+
+document.getElementById('btnTinhTong').onclick = function () {
+  let number = document.getElementById('number').value,
+    hangChuc = Math.floor(number / 10),
+    hangDonvi = number % 10;
+  document.getElementById('tinhTong').innerHTML = hangChuc + hangDonvi;
 };
